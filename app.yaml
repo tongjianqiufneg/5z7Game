@@ -1,0 +1,8 @@
+server:
+  http-port: 8091
+  log-path: /tmp
+
+db:
+  driver: mysql
+
+redis:
