@@ -3,6 +3,7 @@ package route
 import (
 	"5z7Game/http/handler"
 	"5z7Game/http/middleware"
+	"github.com/ebar-go/ego/app"
 	"github.com/gin-gonic/gin"
 )
 
@@ -29,7 +30,8 @@ func Load(router *gin.Engine)  {
 	}
 
 	// websocket
-	router.GET("v1/ws", nil)
+	router.GET("v1/ws", handler.WebsocketHandler)
+	go app.WebSocket().Start()
 
 	// 不需要校验token的路由
 	public := router.Group("v1/public")

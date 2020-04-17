@@ -94,3 +94,19 @@
 - 响应
 json输出
 
+## 测试
+
+- websocket
+下载测试工具
+```
+npm install -g wscat
+```
+
+连接
+```
+wscat -c ws://localhost:8080/v1/ws
+```
+
+输入:`hello`
+
+

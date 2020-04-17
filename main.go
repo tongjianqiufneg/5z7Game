@@ -13,6 +13,8 @@ import (
 func init()  {
 	// 加载配置，错误则panic
 	utils.SecurePanic(config.ReadFromFile("./app.yaml"))
+
+
 }
 
 func main() {
