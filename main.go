@@ -4,7 +4,9 @@ import (
 	"5z7Game/config"
 	"5z7Game/http/route"
 	"5z7Game/pkg/utils"
+	"5z7Game/pkg/validator"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin/binding"
 	"strconv"
 )
 
@@ -14,6 +16,9 @@ func init()  {
 }
 
 func main() {
+	// 指定自定义的validator
+	binding.Validator = new(validator.Validator)
+
 	router := gin.Default()
 
 	route.Load(router)
